@@ -7,5 +7,7 @@ def cutoffTime = System.currentTimeMillis() - (thresholdDays * 24 * 60 * 60 * 10
 
 Jenkins.instance.getAllItems(Job).each { job ->
     def oldBuilds = job.builds.findAll { it.timeInMillis < cutoffTime }
-    println "Job: ${job.fullName} has ${oldBuilds.size()} builds older than ${thresholdDays} days."
+    if (oldBuilds.size > 0){
+       println "Job: ${job.fullName} has ${oldBuilds.size()} builds older than ${thresholdDays} days."
+   }
 }

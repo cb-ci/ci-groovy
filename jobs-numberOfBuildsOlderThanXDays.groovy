@@ -9,5 +9,6 @@ Jenkins.instance.getAllItems(Job).each { job ->
     def oldBuilds = job.builds.findAll { it.timeInMillis < cutoffTime }
     if (oldBuilds.size > 0){
        println "Job: ${job.fullName} has ${oldBuilds.size()} builds older than ${thresholdDays} days."
+       //job.delete();
    }
 }

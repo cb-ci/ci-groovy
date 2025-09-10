@@ -1,4 +1,4 @@
 println "plugins:"
 Jenkins.instance.pluginManager.plugins.each { plugin ->
-    println " - id: "+ plugin.getShortName()
+    println "- id: "+ plugin.getShortName() + " #" + plugin.getVersion()
 }

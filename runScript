@@ -1,0 +1,2 @@
+#! /bin/bash
+curl -XPOST --data-urlencode  "script=$(cat ./jobs-printJobsHangOnInputStep.groovy)" -L -s --user $USER:$TOKEN $CONTROLLER_URL/scriptText
